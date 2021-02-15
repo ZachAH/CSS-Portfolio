@@ -4,7 +4,7 @@
     box-sizing: border-box;
   }
 
-
+/* header css with the nav components and text */
 .header .flex-container{
     background-size: cover;
     display: flex;
@@ -38,9 +38,9 @@ header a{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     
 }
-
+/* hero image and height with css */
 .hero{
-    background-image:  linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/hero.jpg");
+    background-image:  linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/hero.png");
     height: 400px;
     background-position: center;
     background-repeat: no-repeat;
@@ -58,16 +58,202 @@ header a{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 45px;
 }
+/* page and contens css padding margins colors and the spacing */
+.page-content {
+    max-width: 88%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .contents {
+    margin: 25px 0;
+    padding: 10px 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: space-between;
+  }
+  
+  .contents > h2 {
+    flex: 0 0 20%;
+    text-align: right;
+    padding-right: 15px;
+    border-right: 4px solid rgba(114, 169, 143, 1);
+    font-size: 4vw;
+    line-height: 1.1;
+  }
+  
+  .contents > div {
+    flex: 0 0 77%;
+  }
+  
+  .contents p {
+    margin-bottom: 20px;
+  }
+  
 
-.grid-container-1{
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: rgba(114, 169, 143, 1);
+    background-color: rgba(114, 169, 143, 1);
+    line-height: 1.5;
+  }
+  
+
+/*sets the grid columns and the length and 1fr for avaliable space*/
+.grid-container {
     display: grid;
-    grid-template-columns: 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5%;
-    background-color: rgba(14, 169, 143, 1);
+   column-gap: 10px;
+   row-gap: 10px;
+   grid-auto-flow: dense;
+   grid-template-columns:  repeat(12, 1fr);
+   grid-auto-rows: minmax(150px, 1fr);
+    background-color: rgba( 29,30, 24, 1);
+}
+/*setting the grid items css with borders padding and colors*/
+.grid-item {
+    border: 5px solid rgba(114, 169, 143, 1) ;
+    grid-column: span 3;
+    background-color: rgba( 29,30, 24, 1) ;
+    color: rgba(14, 169, 143, 1);
+    min-height: 150px;
+    display: flex;
+    align-items: flex-end;
+    padding: 0 0 20px 0;
+    text-decoration: none;
+    background-blend-mode: soft-light;
+    background-size: 150%;
+    transition: all 0.5s;
+    font-size: 0.9rem;
+  
+}
+/*setting hover animation for color*/
+.grid-item:hover {
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
+.grid-item:first-child {
+    grid-column: span 6;
+    grid-row: span 2;
+
+}
+
+/*setting grid layout for contact section*/
+.contents address {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+  }
+  
+/*setting colors and padding and programming to display inline*/
+.contents address a {
+    color: rgba(114, 169, 143, 1);
+    padding: 5px;
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-style: normal;
+    background-image: linear-gradient(270deg, rgba(29,30, 24, 1) 0%, rgba(114, 169, 143, 1) 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 0.2em;
+    background-position: bottom;
+    transition: all 0.25s ease-in;
+    margin: 0 0.2rem 0.1rem;
+    display: inline-block;
+} 
+
+/*on hover animation*/
+.contents address a:hover {
+    background-size: 100% 88%;
+    color: rgba(29,30, 24, 1);
+  }
+  
+
+
+.page-content {
+    background-color: rgba(29, 30, 24, 21);
+}
+
+ .page-content h2, p {
+    color: rgba(14, 169, 143, 1);
+}
     
+/* images for pages on website */
+.book-search {
+    background-image: url('../images/1.png');
+}
 
+.zoo-keeper {
+    background-image: url('../images/2.png');
+}
 
+.calculator {
+    background-image: url('../images/4.png');
+}
+
+.o-snap {
+    background-image: url('../images/3.png');
+}
+
+/*setting sizes for different screens in browser*/
+@media screen and (max-width: 980px) {
+    header {
+      padding: 0 0 10px 0;
+      justify-content: center;
+      text-align: center;
+    }
+  
+    header h1 {
+      width: 100%;
+      padding: 5px;
+      margin-bottom: 10px;
+      font-size: 10vw;
+    }
+  
+    header nav {
+      justify-content: center;
+    }
+  
+    .page-section > h2,
+    .page-section > div {
+      flex: 0 0 100%;
+    }
+  
+    .page-section > h2 {
+      border-right: none;
+      border-bottom: 4px solid rgba(114, 169, 143, 1);
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      text-align: left;
+      font-size: 7vw;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .grid-item,
+    .grid-item:first-child {
+      grid-column: 1 / -1;
+    }
+  
+    .grid-container {
+      grid-auto-rows: minmax(200px, 1fr);
+    }
+  
+    .hero-banner {
+      justify-content: center;
+      text-align: center;
+    }
+  
+    .contact address {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+  
 
 
 
